@@ -57,7 +57,7 @@ Chosen to broaden the author's stack beyond Go/React while staying practical and
 | Forms & validation | React Hook Form + Zod | Same Zod schemas validate client and server |
 | Database | PostgreSQL | Hosted on Neon or Supabase (free tier) |
 | ORM | Drizzle ORM | Typed queries, SQL migrations committed to repo |
-| Auth | Auth.js (NextAuth) | Google OAuth + email/password |
+| Auth | Better Auth | Google OAuth + email/password; Drizzle adapter, database sessions |
 | Email | Resend | Reminder and digest emails |
 | Scheduled jobs | Vercel Cron | Daily reminder / ghosting check |
 | Drag and drop | dnd-kit | Kanban board |
@@ -143,7 +143,8 @@ All child records cascade-delete with their Application. Every query is scoped b
 ## 5. Features
 
 ### 5.1 Authentication
-- Sign in with Google, or email + password (hashed with bcrypt/argon2)
+- Implemented with Better Auth (Drizzle adapter, sessions stored in PostgreSQL)
+- Sign in with Google, or email + password (hashed with scrypt, Better Auth's default)
 - Protected routes redirect to `/login`
 - Sign out
 - Delete account (removes all data)
@@ -276,7 +277,7 @@ Kept light but present from day one.
 │   │   ├── queries/          # Read functions (always scoped by userId)
 │   │   └── actions/          # Server Actions / mutations
 │   ├── lib/                  # Shared utils, Zod schemas, date helpers
-│   └── auth.ts               # Auth.js config
+│   └── auth.ts               # Better Auth server config
 ├── tests/
 │   ├── unit/
 │   ├── integration/
