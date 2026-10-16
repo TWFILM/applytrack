@@ -1,6 +1,9 @@
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 
 // Placeholder landing page. Real landing page comes in Milestone 7 (Polish).
+// Signed-in visitors are redirected to /today by src/proxy.ts.
 export default function Home() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center gap-6 px-4 text-center">
@@ -9,7 +12,9 @@ export default function Home() {
         Track every job application in one place, know exactly what to do next, and never forget to
         follow up.
       </p>
-      <Button disabled>Sign in (coming soon)</Button>
+      <Button asChild>
+        <Link href="/login">Sign in</Link>
+      </Button>
     </main>
   );
 }

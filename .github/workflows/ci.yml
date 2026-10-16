@@ -19,8 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      # Placeholder so env validation passes; CI never connects to a database.
+      # Placeholders so env validation passes during build. Not real secrets:
+      # CI never connects to a database or signs anyone in.
       DATABASE_URL: postgres://ci:ci@localhost:5432/ci
+      BETTER_AUTH_SECRET: ci-placeholder-secret-not-used-anywhere-000
+      BETTER_AUTH_URL: http://localhost:3000
 
     steps:
       - uses: actions/checkout@v7

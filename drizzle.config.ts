@@ -1,11 +1,11 @@
 import { loadEnvConfig } from "@next/env";
 import { defineConfig } from "drizzle-kit";
 
-import { parseServerEnv } from "./src/lib/schemas/env";
+import { parseDatabaseEnv } from "./src/lib/schemas/env";
 
 // drizzle-kit runs outside Next.js, so load .env.local the same way Next does.
 loadEnvConfig(process.cwd());
-const env = parseServerEnv(process.env);
+const env = parseDatabaseEnv(process.env);
 
 export default defineConfig({
   dialect: "postgresql",
