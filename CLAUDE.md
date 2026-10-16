@@ -26,7 +26,7 @@ This is **Applytrack**, a job application tracker. The full product and technica
 - `npm run dev` — start dev server
 - `npm run lint` / `npm run format:check` / `npm run typecheck` / `npm test` / `npm run build` — must pass before a PR
 - `npm run format` — apply Prettier
-- `npm run db:generate` / `npm run db:migrate` — Drizzle migrations (added with the database PR)
+- `npm run db:generate` / `npm run db:migrate` — Drizzle migrations
 
 ## Stack notes
 
