@@ -17,6 +17,8 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.9.1",
+    "better-auth": "^1.7.10",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.4.0",
     "drizzle-orm": "^0.45.4",
@@ -27,6 +29,7 @@
     "radix-ui": "^1.8.1",
     "react": "19.3.0",
     "react-dom": "19.3.0",
+    "react-hook-form": "^7.90.0",
     "server-only": "^0.0.1",
     "sonner": "^2.0.8",
     "zod": "^4.6.7"

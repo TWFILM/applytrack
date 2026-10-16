@@ -10,13 +10,15 @@ Requires Node.js 24+ and Docker.
 
 ```bash
 npm install
-cp .env.example .env.local   # defaults match docker-compose.yml
+cp .env.example .env.local   # then set BETTER_AUTH_SECRET (command is in the file)
 docker compose up -d         # PostgreSQL on localhost:5433
 npm run db:migrate           # apply migrations
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open http://localhost:3000 and create an account with email and password.
+Google sign-in is optional — see [docs/google-oauth.md](docs/google-oauth.md).
+Deploying: [docs/deploy.md](docs/deploy.md).
 
 ## Scripts
 
